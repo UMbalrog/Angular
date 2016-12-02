@@ -1,0 +1,36 @@
+@import "./common/reset";
+table{
+  margin-top: 10px;
+  width: 650px;
+  border:1px solid #ccc;
+  border-collapse: collapse;
+  text-align: left;
+  td{
+    border:1px solid #ccc;
+    padding: 4px 8px;
+  }
+}
+.header{
+  cursor:pointer;
+  position: relative;
+  span{
+    position: absolute;
+    width: 0;
+    height: 0;
+    right:4px;
+
+
+    &:nth-of-type(1){
+      border: 6px solid transparent;
+      border-top-color: #ccc;
+      border-top-width: 10px;
+      top:10px;
+    }
+    &:nth-of-type(2){
+      border: 6px solid transparent;
+      border-bottom-color: #ccc;
+      border-bottom-width: 10px;
+      top:6px;
+    }
+  }
+}

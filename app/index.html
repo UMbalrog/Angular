@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./prd/styles/app.css">
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="textfirst" placeholder="search FirstName">
+        <input type="text" ng-model="textlast" placeholder="search LastName">
+        <table>
+            <thead>
+                <tr>
+                    <td class="header" ng-click="paixu()">FirstName <span ng-if="shows1" ng-show="isshow1"></span><span ng-if="shows1" ng-hide="isshow1"></span></td>
+                    <td class="header" ng-click="last()">LastName<span ng-if="shows2" ng-show="isshow2"></span><span ng-if="shows2" ng-hide="isshow2"></span></td>
+                    <td class="header">Salary</td>
+                    <td class="header">Salary</td>
+                    <td>Age</td>
+                    <td class="header" ng-click="dirth()">Birthday<span ng-if="shows3" ng-show="isshow3"></span><span ng-if="shows3" ng-hide="isshow3"></span></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="f in arr | orderBy:value | filter :textfirst | filter :textlast">
+                    <td>{{f.FirstName}}</td>
+                    <td>{{f.LastName}}</td>
+                    <td>{{f.Salary | currency:'￥'}}</td>
+                    <td>{{f.Salary | currency:''}}</td>
+                    <td>{{f.Age}}</td>
+                    <td>{{f.Birthday}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="./common/angular.min.js"></script>
+<script src="./prd/scripts/app.js"></script>
+</html>

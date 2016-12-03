@@ -23,9 +23,11 @@ myApp.controller("myCtrl",["$scope",function($scope){
     $scope.isshow1 = true;
     $scope.isshow2 = true;
     $scope.isshow3 = true;
+    $scope.isshow4 = true;
     $scope.shows1 = false;
     $scope.shows2 = false;
     $scope.shows3 = false;
+    $scope.shows4 = false;
 
     $scope.paixu = function(obj,numbers){
         console.log(obj+","+numbers);
@@ -33,19 +35,25 @@ myApp.controller("myCtrl",["$scope",function($scope){
             case"1" : $scope.shows1 = true;
                       $scope.shows2 = false;
                       $scope.shows3 = false;
+                      $scope.shows4 = false;
                 break;
             case"2" : $scope.shows1 = false;
                       $scope.shows2 = true;
                       $scope.shows3 = false;
+                      $scope.shows4 = false;
                 break;
             case"3" : $scope.shows1 = false;
                       $scope.shows2 = false;
                       $scope.shows3 = true;
+                      $scope.shows4 = false;
+                break;
+            case"4" : $scope.shows1 = false;
+                      $scope.shows2 = false;
+                      $scope.shows3 = false;
+                      $scope.shows4 = true;
                 break;
         }
-
         tab("isshow"+numbers,obj);
-
     };
     function tab(num,str){
         if($scope.value == str){

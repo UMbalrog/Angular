@@ -4,19 +4,19 @@ myApp.controller("myCtrl",["$scope",function($scope){
 
     $scope.arr = [
         {
-            FirstName:"lili",Salary:1233350,LastName:"linst",Birthday:"2016-11-12",Age:23
+            FirstName:"lili",Salary:1233350,LastName:"linst",Birthday:1480734686504,Age:23
         },
         {
-            FirstName:"java",Salary:123553240,LastName:"script",Birthday:"2016-10-12",Age:22
+            FirstName:"java",Salary:123553240,LastName:"script",Birthday:1480455686504,Age:22
         },
         {
-            FirstName:"nodejs",Salary:232351230,LastName:"java",Birthday:"2016-12-15",Age:20
+            FirstName:"nodejs",Salary:232351230,LastName:"java",Birthday:1486725676504,Age:20
         },
         {
-            FirstName:"angular",Salary:2345345,LastName:"sass",Birthday:"2016-11-12",Age:45
+            FirstName:"angular",Salary:2345345,LastName:"sass",Birthday:1480789566504,Age:45
         },
         {
-            FirstName:"jquery",Salary:2345456,LastName:"require",Birthday:"2016-8-25",Age:34
+            FirstName:"jquery",Salary:2345456,LastName:"require",Birthday:1484556786504,Age:34
         }
     ];
 

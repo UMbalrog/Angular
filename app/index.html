@@ -11,7 +11,7 @@
 <body>
     <div ng-controller="myCtrl">
         <input type="text" ng-model="textfirst" placeholder="search FirstName">
-        <input type="text" ng-model="textlast" placeholder="search LastName">
+        <!--<input type="text" ng-model="textlast" placeholder="search LastName">-->
         <table>
             <thead>
                 <tr>
@@ -24,18 +24,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="f in arr | orderBy:value | filter :textfirst | filter :textlast">
+                <tr ng-repeat="f in arr | orderBy:value | filter :textfirst">
                     <td>{{f.FirstName}}</td>
                     <td>{{f.LastName}}</td>
                     <td>{{f.Salary | currency:'￥'}}</td>
                     <td>{{f.Salary | currency:''}}</td>
                     <td>{{f.Age}}</td>
-                    <td>{{f.Birthday}}</td>
+                    <td>{{f.Birthday | date:"yyyy-MM-dd"}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
+
 <script src="./common/angular.min.js"></script>
 <script src="./prd/scripts/app.js"></script>
 </html>

@@ -19,7 +19,6 @@ myApp.controller("myCtrl",["$scope",function($scope){
             FirstName:"jquery",Salary:2345456,LastName:"require",Birthday:1484556786504,Age:34
         }
     ];
-
     $scope.value = "";
     $scope.isshow1 = true;
     $scope.isshow2 = true;
@@ -28,27 +27,26 @@ myApp.controller("myCtrl",["$scope",function($scope){
     $scope.shows2 = false;
     $scope.shows3 = false;
 
-    $scope.paixu = function(){
-        $scope.shows1 = true;
-        $scope.shows2 = false;
-        $scope.shows3 = false;
-        tab("isshow1","FirstName");
-    };
+    $scope.paixu = function(obj,numbers){
+        console.log(obj+","+numbers);
+        switch (numbers){
+            case"1" : $scope.shows1 = true;
+                      $scope.shows2 = false;
+                      $scope.shows3 = false;
+                break;
+            case"2" : $scope.shows1 = false;
+                      $scope.shows2 = true;
+                      $scope.shows3 = false;
+                break;
+            case"3" : $scope.shows1 = false;
+                      $scope.shows2 = false;
+                      $scope.shows3 = true;
+                break;
+        }
 
-    $scope.last = function(){
-        $scope.shows1 = false;
-        $scope.shows2 = true;
-        $scope.shows3 = false;
-        tab("isshow2","LastName");
-    };
+        tab("isshow"+numbers,obj);
 
-    $scope.dirth = function(){
-        $scope.shows1 = false;
-        $scope.shows2 = false;
-        $scope.shows3 = true;
-        tab("isshow3","Birthday");
     };
-
     function tab(num,str){
         if($scope.value == str){
             $scope.value = "-"+str;

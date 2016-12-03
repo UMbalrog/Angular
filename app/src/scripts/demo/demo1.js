@@ -20,41 +20,21 @@ myApp.controller("myCtrl",["$scope",function($scope){
         }
     ];
     $scope.value = "";
-    $scope.isshow1 = true;
-    $scope.isshow2 = true;
-    $scope.isshow3 = true;
-    $scope.isshow4 = true;
-    $scope.shows1 = false;
-    $scope.shows2 = false;
-    $scope.shows3 = false;
-    $scope.shows4 = false;
+
+    for (var j=0; j<5; j++){
+        $scope["isshow"+(j+1)] = true;
+        $scope["shows"+(j+1)] = false;
+    }
 
     $scope.paixu = function(obj,numbers){
-        console.log(obj+","+numbers);
-        switch (numbers){
-            case"1" : $scope.shows1 = true;
-                      $scope.shows2 = false;
-                      $scope.shows3 = false;
-                      $scope.shows4 = false;
-                break;
-            case"2" : $scope.shows1 = false;
-                      $scope.shows2 = true;
-                      $scope.shows3 = false;
-                      $scope.shows4 = false;
-                break;
-            case"3" : $scope.shows1 = false;
-                      $scope.shows2 = false;
-                      $scope.shows3 = true;
-                      $scope.shows4 = false;
-                break;
-            case"4" : $scope.shows1 = false;
-                      $scope.shows2 = false;
-                      $scope.shows3 = false;
-                      $scope.shows4 = true;
-                break;
+        //console.log(obj+","+numbers);
+        for (var k=0; k<5; k++){
+            $scope["shows"+(k+1)] = false;
         }
+        $scope["shows"+numbers] = true;
         tab("isshow"+numbers,obj);
     };
+
     function tab(num,str){
         if($scope.value == str){
             $scope.value = "-"+str;

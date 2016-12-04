@@ -19,7 +19,8 @@ myApp.controller("myCtrl",["$scope",function($scope){
             FirstName:"jquery",Salary:2345456,LastName:"require",Birthday:1484556786504,Age:34
         }
     ];
-
+    $scope.textfirst = "";
+    $scope.textlast = "";
     $scope.value = "FirstName";
     $scope.falg = false;
     $scope.paixu = function(obj){
@@ -29,6 +30,19 @@ myApp.controller("myCtrl",["$scope",function($scope){
     $scope.getClass = function(obj){
         if($scope.value == obj){
             return $scope.falg ? "down":"up";
+        }
+    };
+    $scope.search = function(obj){
+        if($scope.textfirst !=""){
+            if(obj.FirstName.toLowerCase().indexOf($scope.textfirst.toLowerCase())!= -1){
+                return true;
+            }
+        } else if($scope.textlast !=""){
+            if(obj.LastName.toLowerCase().indexOf($scope.textlast.toLowerCase())!= -1){
+                return true;
+            }
+        } else {
+            return true;
         }
     }
 

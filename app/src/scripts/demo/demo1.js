@@ -19,29 +19,17 @@ myApp.controller("myCtrl",["$scope",function($scope){
             FirstName:"jquery",Salary:2345456,LastName:"require",Birthday:1484556786504,Age:34
         }
     ];
-    $scope.value = "";
 
-    for (var j=0; j<5; j++){
-        $scope["isshow"+(j+1)] = true;
-        $scope["shows"+(j+1)] = false;
-    }
-
-    $scope.paixu = function(obj,numbers){
-        //console.log(obj+","+numbers);
-        for (var k=0; k<5; k++){
-            $scope["shows"+(k+1)] = false;
-        }
-        $scope["shows"+numbers] = true;
-        tab("isshow"+numbers,obj);
+    $scope.value = "FirstName";
+    $scope.falg = false;
+    $scope.paixu = function(obj){
+        $scope.falg = ($scope.value == obj) ? !$scope.falg : false;
+        $scope.value = obj;
     };
-
-    function tab(num,str){
-        if($scope.value == str){
-            $scope.value = "-"+str;
-            $scope[num] = false;
-        }else{
-            $scope.value = str;
-            $scope[num] = true;
+    $scope.getClass = function(obj){
+        if($scope.value == obj){
+            return $scope.falg ? "down":"up";
         }
     }
+
 }]);

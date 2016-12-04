@@ -15,16 +15,16 @@
         <table>
             <thead>
                 <tr>
-                    <td class="header" ng-click="paixu('FirstName','1')">FirstName <span ng-if="shows1" ng-show="isshow1"></span><span ng-if="shows1" ng-hide="isshow1"></span></td>
-                    <td class="header" ng-click="paixu('LastName','2')">LastName<span ng-if="shows2" ng-show="isshow2"></span><span ng-if="shows2" ng-hide="isshow2"></span></td>
-                    <td class="header" ng-click="paixu('Salary','4')">Salary<span ng-if="shows4" ng-show="isshow4"></span><span ng-if="shows4" ng-hide="isshow4"></span></td>
-                    <td>Salary</td>
-                    <td class="header">Age</td>
-                    <td class="header" ng-click="paixu('Birthday','3')">Birthday<span ng-if="shows3" ng-show="isshow3"></span><span ng-if="shows3" ng-hide="isshow3"></span></td>
+                    <td class="header" ng-click="paixu('FirstName')">FirstName <span ng-class="getClass('FirstName')"></span></td>
+                    <td class="header" ng-click="paixu('LastName')">LastName<span ng-class="getClass('LastName')"></span></td>
+                    <td class="header" ng-click="paixu('Salarys')">Salary<span ng-class="getClass('Salarys')"></span></td>
+                    <td class="header" ng-click="paixu('Salary')">Salary<span ng-class="getClass('Salary')"></span></td>
+                    <td class="header" ng-click="paixu('Age')">Age<span ng-class="getClass('Age')" ></span></td>
+                    <td class="header" ng-click="paixu('Birthday')">Birthday<span ng-class="getClass('Birthday')"></span></td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="f in arr | orderBy:value | filter :textfirst">
+                <tr ng-repeat="f in arr | orderBy:value : falg | filter :textfirst">
                     <td>{{f.FirstName}}</td>
                     <td>{{f.LastName}}</td>
                     <td>{{f.Salary | currency:'￥'}}</td>

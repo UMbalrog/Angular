@@ -10,15 +10,19 @@
 </head>
 <body>
     <div ng-controller="myCtrl">
-        <input type="text" ng-model="textfirst" placeholder="search FirstName">
-        <input type="text" ng-model="textlast" placeholder="search LastName">
+        <div class="box">
+            <input type="text" ng-model="textfirst" placeholder="search FirstName">
+            <input type="text" ng-model="textlast" placeholder="search LastName">
+            <input id="checkbox" type="checkbox" ng-click="checks()"> Exact Match
+        </div>
+
         <table>
             <thead>
                 <tr>
                     <td class="header" ng-click="paixu('FirstName')">FirstName <span ng-class="getClass('FirstName')"></span></td>
                     <td class="header" ng-click="paixu('LastName')">LastName<span ng-class="getClass('LastName')"></span></td>
-                    <td class="header" ng-click="paixu('Salarys')">Salary<span ng-class="getClass('Salarys')"></span></td>
-                    <td class="header" ng-click="paixu('Salary')">Salary<span ng-class="getClass('Salary')"></span></td>
+                    <td class="header" ng-click="paixu('Salarys')">Salary&nbsp;&nbsp;&nbsp;&nbsp;<span ng-class="getClass('Salarys')"></span></td>
+                    <td class="header" ng-click="paixu('Salary')">Salary&nbsp;&nbsp;&nbsp;<span ng-class="getClass('Salary')"></span></td>
                     <td class="header" ng-click="paixu('Age')">Age<span ng-class="getClass('Age')" ></span></td>
                     <td class="header" ng-click="paixu('Birthday')">Birthday<span ng-class="getClass('Birthday')"></span></td>
                 </tr>

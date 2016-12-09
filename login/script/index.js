@@ -14,7 +14,7 @@ function myCtrl($scope,$http){
             username:name,
             password:pass
         };
-        $http.post("../mock/livelist.json",params).then(function(datas){
+        $http.post("./livelist.json",params).then(function(datas){
             console.log(datas);
             //根据datas返回，判断结果
 

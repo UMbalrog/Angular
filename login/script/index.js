@@ -35,8 +35,8 @@ function myCtrl($scope,$http){
     };
     $scope.getfocus = function(){
         getyan();
-        ishow_yan = false;
-        yanzhen = '';
+        $scope.ishow_yan = false;
+        $scope.yanzhen = '';
     };
     $scope.submit = function(){
         if($scope.yanzhen == $scope.str1){

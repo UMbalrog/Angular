@@ -58,7 +58,6 @@ gulp.task("webserver",function(){
                     case '/api/getLivelist.php':
                         res.setHeader("Content-type","application/json");
                         fs.readFile('./mock/livelist.json','utf-8',function(err,data){
-                            res.end("hello world");
                             res.end(data);
                         });
                         return;

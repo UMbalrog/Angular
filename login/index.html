@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myCtrl">
+	<div id="ElongLogin" class="formbox">   
+        <div class="inputbox login_id">
+            <span class="icon"></span>
+            <input class="blur" type="text" ng-model="username" ng-focus="ishow_name = false;username = '';" placeholder="用户名/卡号/手机号/邮箱">
+            <div class="input_tip" name="input_error_tip" ng-show="ishow_name">    您输入的用户名和密码不匹配，请重新输入！
+            </div>
+        </div>
+        <div class="inputbox login_pw" style="" id="input_password">
+            <span class="icon"></span>
+            <input class="blur" type="password" ng-model="password" ng-focus="ishow_pass = false; password = '';" id="PassWord">
+            <div class="input_tip" name="input_error_tip" ng-show="ishow_pass">您输入的密码和用户名不匹配，请重新输入！
+            </div>
+        </div>
+	    <div class="inputbox">
+	  	    <input class="test" type="text" placeholder="验证码" ng-model="yanzhen" ng-focus="getfocus()">
+	  	    <p class="test-wrap">{{str1}}</p>
+	  	    <a href="#?" id="ValidateHref" ng-click="tab()">换一张</a>
+	  	    <div class="input_tip input_tip_yzm" id="validate_result" ng-show="ishow_yan">您输入的验证码有误</div>
+	    </div>
+        <a class="loginbtn" ng-click="submit()">登录</a>
+        <div>
+            账号aaa 密码123
+        </div>
+    </div>
+</body>
+<script src="./script/libs/jquery-3.1.1.js"></script>
+<script src="./script/libs/angular.min.js"></script>
+<script src="./script/libs/angular-ui-router.min.js"></script>
+<script src="./script/index.js"></script>
+</html>

@@ -27,9 +27,13 @@
                             <div class="scroller">
                                 <div class="swiper-container nav-container" id="nav-container">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide list">
+                                        <div class="swiper-slide list" >
                                             <div class="scroller1">
-                                                <div id="list"></div>
+                                               <ul>
+                                                  <li ng-repeat="it in items">
+                                                     <a ui-sref="show({id:it.id})"><img src={{it.img}}><b>{{it.title}}</b></a>
+                                                  </li>
+                                               </ul>
                                             </div>
                                         </div>
                                         <div class="swiper-slide list">
@@ -50,7 +54,6 @@
                             </div>
                         </div>
                     </div>
-
 
                 </div>
                 <div class="swiper-slide">关注页...</div>

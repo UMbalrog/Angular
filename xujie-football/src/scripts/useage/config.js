@@ -14,6 +14,25 @@ function Config($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                 }
             }
         })
+        .state("show",{
+            url:"/show?id",
+            templateUrl:"./view/show.html",
+            resolve:{
+                loadPlugin:function($ocLazyLoad){
+                    return $ocLazyLoad.load([
+                        {
+                            files:["./src/styles/useage/show.css"]
+                        }
+                    ])
+                },
+                showproData:function($http){ //返回一组数据
+                    return $http.get("./moke/livelist.json").then(function(datas){
+                        return datas.data;
+                    })
+                }
+            },
+            controller:"showcontroller"
+        })
         .state("index.home",{
             url:"/home",
             templateUrl:"./view/home.html",
@@ -29,7 +48,7 @@ function Config($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                 },
                 proData:function($http){ //返回一组数据
                     return $http.get("./moke/livelist.json").then(function(datas){
-                        return datas.data;
+                        return datas.data.data;
                     })
                 }
 
@@ -74,20 +93,7 @@ function Config($stateProvider,$urlRouterProvider,$ocLazyLoadProvider){
                 }
             }
         })
-        .state("show",{
-            url:"/show/:id",
-            templateUrl:"./view/show.html",
-            resolve:{
-                loadPlugin:function($ocLazyLoad){
-                    return $ocLazyLoad.load([
-                        {
-                            files:["./src/styles/useage/show.css"]
-                        }
-                    ])
-                }
-            },
-            controller:"showcontroller"
-        })
+
 }
 angular.module("myApp")
     .config(Config);

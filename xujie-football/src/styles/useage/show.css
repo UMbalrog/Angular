@@ -78,6 +78,8 @@ i, b {
     .m-detail .img img {
       width: 100%;
       height: 100%; }
+    .m-detail .img p {
+      font-size: 0.16rem; }
 
 .mask {
   width: 100%;

@@ -1,8 +1,10 @@
 function homeSer(){
     this.swiper = function(){
+
         var myscroll = new IScroll(".scroller1",{
             click:true
         });
+
         swiper();
         swiper2();
         function swiper(){
@@ -10,6 +12,7 @@ function homeSer(){
                 direction:"horizontal",
                 loop: false,
                 preventClicks : true,
+                click:true,
                 onSlideChangeStart:function(swiper){//滑动之后触发的回调
                     //获取当前页面的索引
                     var idx=swiper.activeIndex;
@@ -23,9 +26,7 @@ function homeSer(){
                 direction:"horizontal",
                 loop: false,
                 preventClicks : true,
-                onClick:function(){
-
-                },
+                click:true,
                 onSlideChangeStart:function(swiper){//滑动之后触发的回调
                     //获取当前页面的索引
                     var idx=swiper.activeIndex;
@@ -37,7 +38,7 @@ function homeSer(){
         function showCurrent(parent,index){
             $("#"+parent).children().eq(index).addClass("active").siblings().removeClass();
         }
-    }
+    };
 }
 
 angular.module("myApp")
